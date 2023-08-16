@@ -4,10 +4,12 @@
 #include "lexer.h"
 
 int main(void) {
-        Lexer *lexer = lexerNew("(((())))");
+        const char *string = "function ok() { let 1 = 2; return 3 - 1 == 1; }";
+        printf("%s\n\n", string);
+        Lexer *lexer = lexerNew(string);
         while (lexerChar(lexer) != '\0') {
                 Token *token = lexerNext(lexer);
-                // whatever
+                printf("%s\n", tokenStringify(token));
                 tokenCleanup(&token);
         }
         lexerCleanup(&lexer);

@@ -149,6 +149,7 @@ Token *lexerNext(Lexer *lexer)
         return tok;
 }
 
+
 char lexerChar(Lexer *lexer)
 {
         return lexer->ch;
@@ -189,6 +190,121 @@ void tokenCleanup(Token **token)
                 free(*token);
         }
         *token = NULL;
+}
+
+const char *tokenStringify(Token *token)
+{
+        switch (token->type) {
+        case TokenType_Illegal:
+                return "Illegal";
+                break;
+        case TokenType_Eof:
+                return "Eof";
+                break;
+        case TokenType_Ident:
+                return "Ident";
+                break;
+        case TokenType_Int:
+                return "Int";
+                break;
+        case TokenType_Function:
+                return "Function";
+                break;
+        case TokenType_Let:
+                return "Let";
+                break;
+        case TokenType_True:
+                return "True";
+                break;
+        case TokenType_False:
+                return "False";
+                break;
+        case TokenType_If:
+                return "If";
+                break;
+        case TokenType_Else:
+                return "Else";
+                break;
+        case TokenType_While:
+                return "While";
+                break;
+        case TokenType_For:
+                return "For";
+                break;
+        case TokenType_Return:
+                return "Return";
+                break;
+        case TokenType_Plus:
+                return "Plus";
+                break;
+        case TokenType_Minus:
+                return "Minus";
+                break;
+        case TokenType_Equals:
+                return "Equals";
+                break;
+        case TokenType_Bang:
+                return "Bang";
+                break;
+        case TokenType_Asterisk:
+                return "Asterisk";
+                break;
+        case TokenType_Slash:
+                return "Slash";
+                break;
+        case TokenType_Hashtag:
+                return "Hashtag";
+                break;
+        case TokenType_DoubleQuotes:
+                return "DoubleQuotes";
+                break;
+        case TokenType_Apostrophe:
+                return "Apostrophe";
+                break;
+        case TokenType_LT:
+                return "LT";
+                break;
+        case TokenType_GT:
+                return "GT";
+                break;
+        case TokenType_Ampersand:
+                return "Ampersand";
+                break;
+        case TokenType_Pipe:
+                return "Pipe";
+                break;
+        case TokenType_Comma:
+                return "Comma";
+                break;
+        case TokenType_Dot:
+                return "Dot";
+                break;
+        case TokenType_Semicolon:
+                return "Semicolon";
+                break;
+        case TokenType_Colon:
+                return "Colon";
+                break;
+        case TokenType_LParen:
+                return "LParen";
+                break;
+        case TokenType_RParen:
+                return "RParen";
+                break;
+        case TokenType_LBrace:
+                return "LBrace";
+                break;
+        case TokenType_RBrace:
+                return "RBrace";
+                break;
+        case TokenType_LBracket:
+                return "LBracket";
+                break;
+        case TokenType_RBracket:
+                return "RBracket";
+                break;
+        }
+        return "Unknown";
 }
 
 /*

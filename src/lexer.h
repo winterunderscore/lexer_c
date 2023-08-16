@@ -57,5 +57,6 @@ Token *tokenNew(TokenType type, char *literal);
 TokenType getTokenTypeFromToken(Token *token);
 char *getLiteralFromToken(Token *token);
 void tokenCleanup(Token **token);
+const char *tokenStringify(Token *token);
 
 #endif // _LEXER_H_
