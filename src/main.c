@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#include "lexer.h"
+#include "lexer/lexer.h"
 
 int main(void) {
         const char *string = "function ok() { let 1 = 2; return 3 - 1 == 1; }";
